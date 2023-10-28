@@ -7,8 +7,6 @@ from django.shortcuts import render, redirect
 
 
 
-
-
 def список_тестов(request):
     тесты = Test.objects.all()
     return render(request, 'mainapp/список_тестов.html', {'тесты': тесты})

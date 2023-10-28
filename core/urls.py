@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from mainapp.views import index, список_тестов, начать_тест, отправить_тест, результаты_теста
-
+from mainapp.actions import send_test_link
 from mainapp.urls import api_urlpatterns
 
 urlpatterns = [
@@ -28,6 +28,9 @@ urlpatterns = [
     path('начать_тест/<int:test_id>/', начать_тест, name='начать_тест'),
     path('отправить_тест/<int:test_id>/', отправить_тест, name='отправить_тест'),
     path('результаты_теста/<int:result_id>/', результаты_теста, name='результаты_теста'),
+    path('admin/send_test_link/', send_test_link, name='admin_send_test_link'),
+    
+
 ]
 
 urlpatterns += api_urlpatterns

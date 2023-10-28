@@ -2,6 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (TestViewSet, QuestionViewSet, SpecialistCategoryViewSet,
                     SpecialistViewSet, UserTestResultViewSet, index, список_тестов, начать_тест, отправить_тест, результаты_теста)
+from .actions import send_test_link
 
 router = DefaultRouter()
 router.register(r'tests', TestViewSet)
@@ -18,6 +19,8 @@ web_urlpatterns = [
     path('начать_тест/<int:test_id>/', начать_тест, name='начать_тест'),
     path('отправить_тест/<int:test_id>/', отправить_тест, name='отправить_тест'),
     path('результаты_теста/<int:result_id>/', результаты_теста, name='результаты_теста'),
+    path('admin/send_test_link/', send_test_link, name='admin_send_test_link'),
+
     
 ]
 

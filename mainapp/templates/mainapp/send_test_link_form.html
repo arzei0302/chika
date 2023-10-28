@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="module">
+  <form method="post" action="{% url 'admin:your_app_name_test_send_test_link' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="_apply" value="Отправить">
+  </form>
+</div>
+{% endblock %}
